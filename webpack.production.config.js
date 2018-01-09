@@ -26,8 +26,13 @@ module.exports = {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
-          use: ["css-loader", "postcss-loader"]
+          use: ["./loaders/remove-space", "css-loader", "postcss-loader"]
         })
+      }, {
+        test: /\.tpl\.html$/,
+        use: {
+          loader: 'html-template-loader'
+        }
       }
     ]
   },

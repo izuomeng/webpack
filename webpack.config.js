@@ -36,6 +36,11 @@ module.exports = {
             loader: 'postcss-loader'
           }
         ]
+      }, {
+        test: /\.tpl\.html$/,
+        use: {
+          loader: './loaders/html-template-loader'
+        }
       }
     ]
   },
