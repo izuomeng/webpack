@@ -1,5 +1,6 @@
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const AddCommentPlugin = require('./plugins/add-comment-plugin')
 
 module.exports = {
   devtool: 'source-map',
@@ -49,6 +50,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: __dirname + '/app/index.tmpl.html'
     }),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new AddCommentPlugin(),
   ]
 }
